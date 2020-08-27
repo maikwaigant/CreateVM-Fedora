@@ -19,7 +19,7 @@ Connect-VIServer -Server $VI_SERVER -User $VI_USERNAME -password $VI_PASSWORD | 
 Write-Host "Create VM ..."
 New-VM -Name $VI_VMNAME -VMHost 10.133.250.201 -GuestId fedora64Guest `
 -NumCpu 4 -MemoryMB 16384 -DiskMB 60000 -Datastore DataStoreHDD -Version v12 -NetworkName 'PG WAN 1'
-Start-VM -VM $VI-VMNAME -Confirm -RunAsync
+Start-VM -VM $VI_VMNAME -Confirm -RunAsync
 
 Write-Host "Disconnecting ...`n"
 Disconnect-VIServer * -Confirm:$false
